@@ -22,4 +22,9 @@ public class DummyPerson extends Person {
     public void infect(Person person) {
 
     }
+
+    @Override
+    public int getMaxSpeed() {
+        return 1;
+    }
 }

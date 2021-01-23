@@ -21,5 +21,10 @@ public class Elder extends Person {
 
     }
 
+    @Override
+    public int getMaxSpeed() {
+        return 1;
+    }
+
 
 }

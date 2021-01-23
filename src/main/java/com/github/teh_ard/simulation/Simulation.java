@@ -54,6 +54,7 @@ public class Simulation {
      * Aktualizuje informacje o działaniu symulacji wraz z mapą i wszystkimi osobami
      */
     public void update() {
+        System.out.printf("==================== iteracja nr %d ====================%n", iterationCount);
         map.update();
 
         boolean anyoneAlive = false;
