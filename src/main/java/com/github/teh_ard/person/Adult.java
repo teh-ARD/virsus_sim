@@ -7,6 +7,11 @@ public class Adult extends Person {
     }
 
     @Override
+    public boolean isInfected() {
+        return false;
+    }
+
+    @Override
     void heal(Person person) {
 
     }

@@ -10,11 +10,23 @@ public class Simulation {
 
     private final SimMap map;
     List<Person> people = new ArrayList<>();
+    private boolean done = false;
+    private int maxIterationCount = 1000;
+    private int iterationCount = 0;
+
 
     public Simulation(int mapSize) {
         map = new SimMap(mapSize);
+        while (!done) {
+            update();
+        }
     }
-    
+
+    /**
+     * Dodaje osoby do mapy
+     * @param count liczba osób do dodania
+     * @param clazz klasa (rodzaj osoby) której instancja ma być dodana
+     */
     public void addPerson(int count, Class<? extends Person> clazz) {
 
         for (int i = 0; i < count; ++i) {
@@ -25,6 +37,33 @@ public class Simulation {
             } catch (InstantiationException | IllegalAccessException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public int getMaxIterationCount() {
+        return maxIterationCount;
+    }
+
+    public void setMaxIterationCount(int maxIterationCount) {
+        this.maxIterationCount = maxIterationCount;
+    }
+
+    public void update() {
+        map.update();
+        boolean anyoneAlive = false;
+        boolean anyoneInfected = false;
+        for (Person person : people) {
+            person.update();
+            if (!person.isDead()) {
+                anyoneAlive = true;
+            }
+            if (person.isInfected()){
+                anyoneInfected = true;
+            }
+        }
+
+        if (!anyoneAlive || !anyoneInfected || ++iterationCount > maxIterationCount ) {
+            done = true;
         }
     }
 

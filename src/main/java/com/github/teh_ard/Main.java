@@ -10,6 +10,8 @@ import java.security.InvalidParameterException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+// https://github.com/teh-ARD/virus_sim
+
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -29,6 +31,9 @@ public class Main {
 
         System.out.println("Podaj liczbę starców");
         sim.addPerson(readInt(), Elder.class);
+
+//      System.out.println("Podaj maksymalną liczbę iteracji");
+//        sim.setMaxIterationCount(readInt());
 
     }
 

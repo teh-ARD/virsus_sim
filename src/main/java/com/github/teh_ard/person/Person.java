@@ -3,10 +3,11 @@ package com.github.teh_ard.person;
 public abstract class Person {
 
     abstract boolean canInfect(Person person);
+    public abstract boolean isInfected();
     abstract void heal(Person person);
     abstract void infect(Person person);
 
-    private boolean isDead() {
+    public boolean isDead() {
         return false;
     }
 
@@ -20,6 +21,9 @@ public abstract class Person {
 
     private void checkNearby() {
 
+    }
+
+    public void update() {
     }
 
 }
