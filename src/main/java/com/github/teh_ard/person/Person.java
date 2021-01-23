@@ -2,10 +2,10 @@ package com.github.teh_ard.person;
 
 public abstract class Person {
 
-    abstract boolean canInfect(Person person);
+    public abstract boolean canInfect(Person person);
     public abstract boolean isInfected();
-    abstract void heal(Person person);
-    abstract void infect(Person person);
+    public abstract void heal(Person person);
+    public abstract void infect(Person person);
 
     public boolean isDead() {
         return false;

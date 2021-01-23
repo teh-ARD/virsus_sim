@@ -2,7 +2,7 @@ package com.github.teh_ard.person;
 
 public class Adult extends Person {
     @Override
-    boolean canInfect(Person person) {
+    public boolean canInfect(Person person) {
         return false;
     }
 
@@ -12,12 +12,12 @@ public class Adult extends Person {
     }
 
     @Override
-    void heal(Person person) {
+    public void heal(Person person) {
 
     }
 
     @Override
-    void infect(Person person) {
+    public void infect(Person person) {
 
     }
 }

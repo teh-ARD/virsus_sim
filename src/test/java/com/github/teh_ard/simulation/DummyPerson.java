@@ -1,6 +1,8 @@
-package com.github.teh_ard.person;
+package com.github.teh_ard.simulation;
 
-public class Elder extends Person {
+import com.github.teh_ard.person.Person;
+
+public class DummyPerson extends Person {
     @Override
     public boolean canInfect(Person person) {
         return false;
@@ -8,7 +10,7 @@ public class Elder extends Person {
 
     @Override
     public boolean isInfected() {
-        return false;
+        return true;
     }
 
     @Override
@@ -20,6 +22,4 @@ public class Elder extends Person {
     public void infect(Person person) {
 
     }
-
-
 }
