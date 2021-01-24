@@ -3,14 +3,11 @@ package com.github.teh_ard.person;
 import com.github.teh_ard.simulation.map.SimMap;
 import com.github.teh_ard.utils.MapPoint;
 
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.Vector;
+import java.util.Objects;
 
 public abstract class Person {
-
     private MapPoint velocity;
     private MapPoint position;
     private boolean died = false;
@@ -73,7 +70,7 @@ public abstract class Person {
     public List<Person> getNearby(SimMap map) {
         List<Person> result = new ArrayList<>();
         for (Person person : map.getPeople()) {
-            if (person == this) {
+            if (person.equals(this)) {
                 continue;
             }
 
@@ -86,11 +83,11 @@ public abstract class Person {
     }
 
     public void update(SimMap map) {
-        for (Person person : getNearby(map)) {
-            if (canInfect(person)) {
+       for (Person person : getNearby(map)) {
+           if (canInfect(person)) {
                 person.setInfected(true);
-            }
-        }
+           }
+       }
     }
 
     public void setPosition(MapPoint position) {

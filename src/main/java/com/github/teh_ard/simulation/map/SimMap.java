@@ -4,14 +4,12 @@ import com.github.teh_ard.person.Person;
 import com.github.teh_ard.utils.MapPoint;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class SimMap {
     private final Rectangle rect;
-    private List<Person> people = new ArrayList<>();
+    private final List<Person> people = new ArrayList<>();
 
     public SimMap(int mapSize) {
         rect = new Rectangle(0,0,mapSize,mapSize);

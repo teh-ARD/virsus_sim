@@ -3,21 +3,16 @@ package com.github.teh_ard.person;
 public class Adult extends Person {
     @Override
     public boolean canInfect(Person person) {
-        return false;
-    }
-
-    @Override
-    public boolean isInfected() {
-        return false;
+        return Math.random() > 0.7;
     }
 
     @Override
     public int getMaxSpeed() {
-        return 1;
+        return 5;
     }
 
     @Override
     protected double getDeathThreshold() {
-        return 0;
+        return 0.85;
     }
 }

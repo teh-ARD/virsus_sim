@@ -2,25 +2,16 @@ package com.github.teh_ard.person;
 
 import com.github.teh_ard.simulation.map.SimMap;
 
-public class Doctor extends Person {
+public class Doctor extends Adult {
+
     @Override
     public boolean canInfect(Person person) {
-        return false;
-    }
-
-    @Override
-    public boolean isInfected() {
-        return false;
-    }
-
-    @Override
-    public int getMaxSpeed() {
-        return 1;
+        return Math.random() > 0.9;
     }
 
     @Override
     protected double getDeathThreshold() {
-        return 0;
+        return 0.9;
     }
 
     @Override

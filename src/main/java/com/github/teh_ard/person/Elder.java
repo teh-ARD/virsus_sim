@@ -3,12 +3,7 @@ package com.github.teh_ard.person;
 public class Elder extends Person {
     @Override
     public boolean canInfect(Person person) {
-        return false;
-    }
-
-    @Override
-    public boolean isInfected() {
-        return false;
+        return Math.random() > 0.6;
     }
 
     @Override
@@ -18,7 +13,7 @@ public class Elder extends Person {
 
     @Override
     protected double getDeathThreshold() {
-        return 0;
+        return 0.7;
     }
 
 
