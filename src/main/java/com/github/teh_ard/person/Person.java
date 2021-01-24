@@ -47,7 +47,7 @@ public abstract class Person {
      * Sprawdza czy ustawia czy osoba powinna umrzeć
      * @return Stan życia osoby
      */
-    private boolean shouldDie() {
+    public boolean shouldDie() {
         return isDead() || isInfected() && Math.random() > getDeathThreshold();
     }
 
@@ -70,7 +70,7 @@ public abstract class Person {
      * @param map Mapa symulacji
      * @return Pobliskie osoby
      */
-    private List<Person> getNearby(SimMap map) {
+    public List<Person> getNearby(SimMap map) {
         List<Person> result = new ArrayList<>();
         for (Person person : map.getPeople()) {
             if (person == this) {
@@ -87,7 +87,7 @@ public abstract class Person {
 
     public void update(SimMap map) {
         if (shouldDie()) {
-            died = true;
+            setDied(true);
             return;
         }
 
@@ -106,5 +106,9 @@ public abstract class Person {
 
     public MapPoint getPosition() {
         return position;
+    }
+
+    public void setDied(boolean died) {
+        this.died = died;
     }
 }
