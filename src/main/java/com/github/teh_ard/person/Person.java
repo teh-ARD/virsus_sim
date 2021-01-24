@@ -12,6 +12,7 @@ public abstract class Person {
     private MapPoint position;
     private boolean died = false;
     private boolean infected = false;
+    int incubationPeriod = -1;
 
     public Person() {
         velocity = new MapPoint(
@@ -26,6 +27,10 @@ public abstract class Person {
 
     public void setInfected(boolean infected) {
         this.infected = infected;
+        if (infected) {
+            this.incubationPeriod = 2;
+        }
+
     }
 
     public boolean isInfected() {
@@ -45,7 +50,7 @@ public abstract class Person {
      * @return Stan życia osoby
      */
     public boolean shouldDie() {
-        return isDead() || isInfected() && Math.random() > getDeathThreshold();
+        return isDead() || isInfected() && incubationPeriod == 0 && Math.random() > getDeathThreshold();
     }
 
     /**
@@ -83,6 +88,10 @@ public abstract class Person {
     }
 
     public void update(SimMap map) {
+        if (incubationPeriod > 0) {
+            incubationPeriod--;
+        }
+
        for (Person person : getNearby(map)) {
            if (canInfect(person)) {
                 person.setInfected(true);

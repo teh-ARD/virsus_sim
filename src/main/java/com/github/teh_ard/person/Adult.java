@@ -3,7 +3,7 @@ package com.github.teh_ard.person;
 public class Adult extends Person {
     @Override
     public boolean canInfect(Person person) {
-        return Math.random() > 0.7;
+        return Math.random() > 0.6;
     }
 
     @Override
