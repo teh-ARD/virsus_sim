@@ -21,14 +21,8 @@ public class Doctor extends Adult {
 
     @Override
     public void update(SimMap map) {
-        if (incubationPeriod > 0) {
-            incubationPeriod--;
-        }
+        super.update(map);
         for (Person person : getNearby(map)) {
-            if (canInfect(person)) {
-                person.setInfected(true);
-            }
-
             if (person.incubationPeriod == 0 && Math.random() <= 0.9) {
                 person.setInfected(false);
             }

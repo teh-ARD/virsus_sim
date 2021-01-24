@@ -93,8 +93,13 @@ public abstract class Person {
         }
 
        for (Person person : getNearby(map)) {
-           if (canInfect(person)) {
-                person.setInfected(true);
+           if (!person.isInfected() && canInfect(person)) {
+               if (person.wasInfected()){
+                   person.setInfected(Math.random() > 0.5);
+                   continue;
+               }
+
+               person.setInfected(true);
            }
        }
     }
@@ -109,5 +114,9 @@ public abstract class Person {
 
     public void setDied(boolean died) {
         this.died = died;
+    }
+
+    public boolean wasInfected() {
+        return !infected && incubationPeriod == 0;
     }
 }
