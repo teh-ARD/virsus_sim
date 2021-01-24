@@ -3,8 +3,9 @@ package com.github.teh_ard.person;
 import com.github.teh_ard.simulation.map.SimMap;
 import com.github.teh_ard.utils.MapPoint;
 
-import java.awt.*;
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Vector;
 
@@ -41,8 +42,7 @@ public abstract class Person {
      * @return Stan życia osoby
      */
     private boolean shouldDie() {
-        died = isDead() || isInfected() && Math.random() > getDeathThreshold();
-        return died;
+        return isDead() || isInfected() && Math.random() > getDeathThreshold();
     }
 
     /**
@@ -59,19 +59,39 @@ public abstract class Person {
         position.add(velocity);
     }
 
-//    private void checkNearby(SimMap map) {
-//        for (Person person : map.getPeople()) {
-//            if (person == this) {
-//                continue;
-//            }
-//            if (person.getPosition().distanceToSquared(this.getPosition()) <= 9){
-//
-//            }
-//        }
-//    }
+    /**
+     * Zwraca pobliskie osoby
+     * @param map Mapa symulacji
+     * @return Pobliskie osoby
+     */
+    private List<Person> getNearby(SimMap map) {
+        List<Person> result = new ArrayList<>();
+        for (Person person : map.getPeople()) {
+            if (person == this) {
+                continue;
+            }
+
+            if (person.getPosition().distanceToSquared(this.getPosition()) <= 9){
+                result.add(person);
+            }
+        }
+
+        return result;
+    }
 
     public void update(SimMap map) {
+        if (shouldDie()) {
+            died = true;
+            return;
+        }
+
         move(map);
+
+        for (Person person : getNearby(map)) {
+            if (canInfect(person)) {
+                infect(person);
+            }
+        }
     }
 
     public void setPosition(MapPoint position) {
