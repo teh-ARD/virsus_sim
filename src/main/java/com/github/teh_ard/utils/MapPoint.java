@@ -29,4 +29,16 @@ public class MapPoint {
         x += p2.getX();
         y += p2.getY();
     }
+
+    public double distanceToSquared(MapPoint p2) {
+        return Math.pow(getX() - p2.getX(), 2) + Math.pow(getY() - p2.getY(), 2);
+    }
+
+    @Override
+    public String toString() {
+        return "(" +
+                "" + x +
+                ", " + y +
+                ')';
+    }
 }

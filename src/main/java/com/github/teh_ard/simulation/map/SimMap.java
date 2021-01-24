@@ -32,4 +32,12 @@ public class SimMap {
     public boolean contains(double v, double v1) {
         return rect.contains(v,v1);
     }
+
+    public boolean contains(MapPoint point) {
+        return contains(point.getX(), point.getY());
+    }
+
+    public List<Person> getPeople() {
+        return people;
+    }
 }

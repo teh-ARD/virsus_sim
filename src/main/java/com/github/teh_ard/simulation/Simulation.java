@@ -14,7 +14,6 @@ public class Simulation {
     private int maxIterationCount = 1000;
     private int iterationCount = 1;
 
-
     public Simulation(int mapSize) {
         map = new SimMap(mapSize);
     }
@@ -60,7 +59,7 @@ public class Simulation {
         boolean anyoneAlive = false;
         boolean anyoneInfected = false;
         for (Person person : people) {
-            person.update();
+            person.update(map);
 
             if (!person.isDead()) {
                 anyoneAlive = true;
@@ -82,5 +81,21 @@ public class Simulation {
      */
     public boolean isDone() {
         return done;
+    }
+
+    /**
+     * Zwraca listę osób w symulacji
+     * @return Lista osób w symulacji
+     */
+    public List<Person> getPeople() {
+        return people;
+    }
+
+    /**
+     * Zwraca mapę symulacji
+     * @return Mapa symulacji
+     */
+    public SimMap getMap() {
+        return map;
     }
 }
