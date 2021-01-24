@@ -59,6 +59,12 @@ public class Simulation {
         boolean anyoneAlive = false;
         boolean anyoneInfected = false;
         for (Person person : people) {
+            if (person.shouldDie()) {
+                person.setDied(true);
+                continue;
+            }
+
+            person.move(map);
             person.update(map);
 
             if (!person.isDead()) {

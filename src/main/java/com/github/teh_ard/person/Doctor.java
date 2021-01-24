@@ -25,13 +25,6 @@ public class Doctor extends Person {
 
     @Override
     public void update(SimMap map) {
-        if (shouldDie()) {
-            setDied(true);
-            return;
-        }
-
-        move(map);
-
         for (Person person : getNearby(map)) {
             if (canInfect(person)) {
                 person.setInfected(true);
