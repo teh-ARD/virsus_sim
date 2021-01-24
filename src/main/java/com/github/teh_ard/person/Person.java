@@ -14,6 +14,7 @@ public abstract class Person {
     private MapPoint velocity;
     private MapPoint position;
     private boolean died = false;
+    private boolean infected = false;
 
     public Person() {
         velocity = new MapPoint(
@@ -23,11 +24,16 @@ public abstract class Person {
     }
 
     public abstract boolean canInfect(Person person);
-    public abstract boolean isInfected();
-    public abstract void heal(Person person);
-    public abstract void infect(Person person);
     public abstract int getMaxSpeed();
     protected abstract double getDeathThreshold();
+
+    public void setInfected(boolean infected) {
+        this.infected = infected;
+    }
+
+    public boolean isInfected() {
+        return infected;
+    }
 
     /**
      * Zwraca czy osoba jest martwa czy żywa
@@ -89,7 +95,7 @@ public abstract class Person {
 
         for (Person person : getNearby(map)) {
             if (canInfect(person)) {
-                infect(person);
+                person.setInfected(true);
             }
         }
     }

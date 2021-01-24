@@ -14,17 +14,12 @@ public class DummyPerson extends Person {
     }
 
     @Override
-    public void heal(Person person) {
-
-    }
-
-    @Override
-    public void infect(Person person) {
-
-    }
-
-    @Override
     public int getMaxSpeed() {
         return 1;
+    }
+
+    @Override
+    protected double getDeathThreshold() {
+        return 0;
     }
 }
