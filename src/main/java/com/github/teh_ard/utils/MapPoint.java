@@ -41,4 +41,9 @@ public class MapPoint {
                 ", " + y +
                 ')';
     }
+
+    public void scale(double v) {
+        x *= v;
+        y *= v;
+    }
 }

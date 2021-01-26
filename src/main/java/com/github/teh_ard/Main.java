@@ -15,22 +15,22 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Podaj rozmiar mapy (domyślnie: 100)");
-        Simulation sim = new Simulation(readInt(100));
+        Simulation sim = new Simulation(readInt(100) * 10);
 
-        System.out.println("Podaj liczbę lekarzy (domyślnie: 10)");
-        sim.addPerson(readInt(10), Doctor.class);
+        System.out.println("Podaj liczbę lekarzy (domyślnie: 100)");
+        sim.addPerson(readInt(100), Doctor.class);
 
-        System.out.println("Podaj liczbę dorosłych (domyślnie: 25)");
-        sim.addPerson(readInt(25), Adult.class);
+        System.out.println("Podaj liczbę dorosłych (domyślnie: 250)");
+        sim.addPerson(readInt(250), Adult.class);
 
-        System.out.println("Podaj liczbę dzieci (domyślnie: 15)");
-        sim.addPerson(readInt(15), Child.class);
+        System.out.println("Podaj liczbę dzieci (domyślnie: 150)");
+        sim.addPerson(readInt(150), Child.class);
 
-        System.out.println("Podaj liczbę starców (domyślnie: 5)");
-        sim.addPerson(readInt(5), Elder.class);
+        System.out.println("Podaj liczbę starców (domyślnie: 50)");
+        sim.addPerson(readInt(50), Elder.class);
 
-        System.out.println("Podaj liczbę zarażonych (domyślnie: 5)");
-        int infected = readInt(5);
+        System.out.println("Podaj liczbę zarażonych (domyślnie: 50)");
+        int infected = readInt(50);
 
         System.out.println("Podaj maksymalną liczbę iteracji (domyślnie: 1000)");
         sim.setMaxIterationCount(readInt(1000));
