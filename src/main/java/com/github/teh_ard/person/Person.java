@@ -61,6 +61,7 @@ public abstract class Person {
         return isDead() || isInfected() && incubationPeriod == 0 && Math.random() > Math.min (0.99, (getDeathThreshold() + (-0.05 * lethalityLevel) + 0.25));
     }
 
+//  TODO: skomentować ruch osoby
     /**
      * Odpowiada za ruch osoby
      *
@@ -106,6 +107,13 @@ public abstract class Person {
         position.add(velocity);
     }
 
+    /**
+     * Losuje sektor na podstawie czterokrotnego "rzutu kością" o 2 ścianach
+     *
+     * W ten sposób otrzymujemy różne szanse na wylosowanie każdego z sektorów w ciekawym rozkładzie - ma to symulować
+     * częściej odwiedzane lokacje (np. dom, praca, sklep) oraz mniej odwiedzane (np. klub)
+     * @return numer wylosowanego sektora
+     */
     public int rollSector() {
         int value = 0;
         for (int i = 0; i < 4; ++i) {
@@ -114,6 +122,10 @@ public abstract class Person {
         return Math.max(0, -2 + value);
     }
 
+    /**
+     * Ustawia listę sektorów
+     * @param sectors lista sektorów
+     */
     public void setSectors(List<Rectangle> sectors) {
         this.sectors = sectors;
     }
@@ -140,6 +152,10 @@ public abstract class Person {
         return result;
     }
 
+    /**
+     * Aktualizuje postęp rozwoju wirusa u zarażonego oraz zaraża pobliskie osoby
+     * @param map mapa symulacji
+     */
     public void update(SimMap map) {
         if (incubationPeriod > 0) {
             incubationPeriod--;
@@ -157,26 +173,50 @@ public abstract class Person {
        }
     }
 
+    /**
+     * Ustawia pozycje osoby
+     * @param position pozycja osoby
+     */
     public void setPosition(MapPoint position) {
         this.position = position;
     }
 
+    /**
+     * Zwraca pozycje osoby
+     * @return pozycja osoby
+     */
     public MapPoint getPosition() {
         return position;
     }
 
+    /**
+     * Ustawia stan śmierci osoby
+     * @param died stan śmierci osoby
+     */
     public void setDied(boolean died) {
         this.died = died;
     }
 
+    /**
+     * Sprawdza czy osoba była wcześniej zarażona (i została uleczona)
+     * @return stan ozdrowienia
+     */
     public boolean wasInfected() {
         return !infected && incubationPeriod == 0;
     }
 
+    /**
+     * Koryguje poziom śmiertelności wirusa który nieznacząco zmienia przebieg symulacji
+     * @param lethalityLevel śmiertelność (1-10)
+     */
     public void setLethalityLevel(double lethalityLevel) {
         this.lethalityLevel = lethalityLevel;
     }
 
+    /**
+     * Ustawia podstawową wartość czasu inkubacji nadawaną przy zarażeniu
+     * @param incubationValue czas inkubacji
+     */
     public void setIncubationValue(int incubationValue) {
         this.incubationValue = incubationValue;
     }

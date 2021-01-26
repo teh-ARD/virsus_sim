@@ -1,5 +1,6 @@
 package com.github.teh_ard.utils;
 
+//TODO: skomentować tą klasę
 public class MapPoint {
     double x;
     double y;

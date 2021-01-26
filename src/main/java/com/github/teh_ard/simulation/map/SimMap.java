@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+//TODO: skomentować tą klasę
 public class SimMap {
     private final Rectangle rect;
     private final List<Person> people = new ArrayList<>();
@@ -49,9 +50,6 @@ public class SimMap {
         ));
 
         person.setSectors(personalSectors);
-    }
-
-    public void update() {
     }
 
     public boolean contains(double v, double v1) {

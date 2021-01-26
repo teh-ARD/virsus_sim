@@ -12,9 +12,14 @@ import java.util.Scanner;
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Pyta użytkownika o wartości na jakich symulacja ma działać, zaraża pierwsze osoby oraz odpala symulacje na
+     * tych parametrach
+     * @param args argumenty podane do programu
+     */
     public static void main(String[] args) {
 
-//        TODO: ew. zapytanie "czy chcesz zmieniać domyślne wartości?" żeby nie było tyle klikania enterem
+//      TODO: ew. zapytanie "czy chcesz zmieniać domyślne wartości?" żeby nie było tyle klikania enterem
 
         System.out.println("Podaj rozmiar mapy (domyślnie: 100)");
         Simulation sim = new Simulation(readInt(100) * 10);

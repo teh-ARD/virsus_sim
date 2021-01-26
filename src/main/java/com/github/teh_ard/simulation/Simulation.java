@@ -19,10 +19,17 @@ public class Simulation {
     private final SimMap map;
     private FileWriter writer;
 
+    /**
+     * Tworzy symulacje
+     * @param mapSize rozmiar mapy
+     */
     public Simulation(int mapSize) {
         map = new SimMap(mapSize);
     }
 
+    /**
+     * Rozpoczyna symulacje oraz tworzy plik .csv z podstawowymi danymi odnośnie przebiegu symulacji
+     */
     public void start() {
         File file = new File("virus_sim - " + new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date()) + ".csv");
         try {
@@ -44,7 +51,7 @@ public class Simulation {
      * @param count liczba osób do dodania
      * @param lethalityLevel poziom śmiertelności wirusa
      * @param incubationValue czas inkubacji wirusa (przez jaki czas osoba jest nosicielem bez objawów)
-     * @param clazz klasa (rodzaj osoby) której instancja ma być dodana
+     * @param clazz rodzaj osoby której instancja ma być dodana
      */
     public void addPerson(int count, double lethalityLevel, int incubationValue, Class<? extends Person> clazz) {
         if (!starterGroupCount.containsKey(clazz)) {
@@ -74,10 +81,15 @@ public class Simulation {
 
     /**
      * Aktualizuje informacje o działaniu symulacji wraz z mapą i wszystkimi osobami
+     *
+     * Krok 1 - sprawdzenie dla każdej osoby: czy powinna umrzeć / jest martwa
+     * Krok 2 - jeśli nie jest martwa to zmienia pozycję osoby oraz aktualizuje jej stan
+     * Krok 3 - zbiera podstawowe dane odnośnie aktualnego stanu osób oraz wyświetla je użytkownikowi oraz zapisuje
+     * je do pliku
+     * Krok 4 - sprawdza czy powinien nastąpić koniec symulacji (wszyscy martwi lub zdrowi, limit iteracji)
      */
     public void update() {
         System.out.printf("==================== iteracja nr %d ====================%n", iterationCount);
-        map.update();
 
         for (Person person : people) {
             if (person.shouldDie()) {
@@ -121,10 +133,6 @@ public class Simulation {
         System.out.printf("Zdrowi: %d/%d (%.2f%%)%n", alive - infected, alive, (double) (alive - infected) / alive * 100);
         System.out.printf("Zarażeni: %d/%d (%.2f%%)%n", infected, alive, (double) infected / alive * 100);
 
-        if (alive == 0 || infected == 0 || iterationCount++ >= maxIterationCount ) {
-            done = true;
-        }
-
         if (writer != null) {
             try {
                 writer.write(String.format("Iteracja %d, ",iterationCount - 1));
@@ -140,6 +148,10 @@ public class Simulation {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+
+        if (alive == 0 || infected == 0 || iterationCount++ >= maxIterationCount ) {
+            done = true;
         }
     }
 

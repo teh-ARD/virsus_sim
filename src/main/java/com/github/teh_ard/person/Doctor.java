@@ -14,11 +14,10 @@ public class Doctor extends Adult {
         return 0.9;
     }
 
-    @Override
-    public boolean shouldDie() {
-        return super.shouldDie();
-    }
-
+    /**
+     * Podstawowa funkcja update zawarta w person + leczenie pobliskich
+     * @param map mapa symulacji
+     */
     @Override
     public void update(SimMap map) {
         super.update(map);
