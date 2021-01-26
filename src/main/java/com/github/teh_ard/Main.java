@@ -14,20 +14,28 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        TODO: ew. zapytanie "czy chcesz zmieniać domyślne wartości?" żeby nie było tyle klikania enterem
+
         System.out.println("Podaj rozmiar mapy (domyślnie: 100)");
         Simulation sim = new Simulation(readInt(100) * 10);
 
+        System.out.println("Podaj wskaźnik śmiertelności wirusa [1-10] (domyślnie: 5)");
+        int lethalityLevel = Math.min(10, readInt(5));
+
+        System.out.println("Podaj czas inkubacji wirusa (domyślnie: 2)");
+        int incubationValue = readInt(2);
+
         System.out.println("Podaj liczbę lekarzy (domyślnie: 25)");
-        sim.addPerson(readInt(25), Doctor.class);
+        sim.addPerson(readInt(25), lethalityLevel, incubationValue, Doctor.class);
 
         System.out.println("Podaj liczbę dorosłych (domyślnie: 250)");
-        sim.addPerson(readInt(250), Adult.class);
+        sim.addPerson(readInt(250), lethalityLevel, incubationValue, Adult.class);
 
         System.out.println("Podaj liczbę dzieci (domyślnie: 150)");
-        sim.addPerson(readInt(150), Child.class);
+        sim.addPerson(readInt(150), lethalityLevel, incubationValue, Child.class);
 
         System.out.println("Podaj liczbę starców (domyślnie: 50)");
-        sim.addPerson(readInt(50), Elder.class);
+        sim.addPerson(readInt(50), lethalityLevel, incubationValue, Elder.class);
 
         System.out.println("Podaj liczbę zarażonych (domyślnie: 50)");
         int infected = readInt(50);

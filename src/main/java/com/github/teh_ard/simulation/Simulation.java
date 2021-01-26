@@ -42,9 +42,11 @@ public class Simulation {
     /**
      * Dodaje osoby do mapy
      * @param count liczba osób do dodania
+     * @param lethalityLevel poziom śmiertelności wirusa
+     * @param incubationValue czas inkubacji wirusa (przez jaki czas osoba jest nosicielem bez objawów)
      * @param clazz klasa (rodzaj osoby) której instancja ma być dodana
      */
-    public void addPerson(int count, Class<? extends Person> clazz) {
+    public void addPerson(int count, double lethalityLevel, int incubationValue, Class<? extends Person> clazz) {
         if (!starterGroupCount.containsKey(clazz)) {
             starterGroupCount.put(clazz, 0);
         }
@@ -54,7 +56,7 @@ public class Simulation {
         for (int i = 0; i < count; ++i) {
             try {
                 Person person = clazz.newInstance();
-                map.addPerson(person);
+                map.addPerson(person, lethalityLevel, incubationValue);
                 people.add(person);
             } catch (InstantiationException | IllegalAccessException e) {
                 e.printStackTrace();
@@ -77,8 +79,6 @@ public class Simulation {
         System.out.printf("==================== iteracja nr %d ====================%n", iterationCount);
         map.update();
 
-        boolean anyoneAlive = false;
-        boolean anyoneInfected = false;
         for (Person person : people) {
             if (person.shouldDie()) {
                 person.setDied(true);
@@ -87,14 +87,6 @@ public class Simulation {
 
             person.move();
             person.update(map);
-
-            if (!person.isDead()) {
-                anyoneAlive = true;
-            }
-
-            if (person.isInfected()){
-                anyoneInfected = true;
-            }
         }
 
         int infected = 0;
@@ -129,7 +121,7 @@ public class Simulation {
         System.out.printf("Zdrowi: %d/%d (%.2f%%)%n", alive - infected, alive, (double) (alive - infected) / alive * 100);
         System.out.printf("Zarażeni: %d/%d (%.2f%%)%n", infected, alive, (double) infected / alive * 100);
 
-        if (!anyoneAlive || !anyoneInfected || iterationCount++ >= maxIterationCount ) {
+        if (alive == 0 || infected == 0 || iterationCount++ >= maxIterationCount ) {
             done = true;
         }
 

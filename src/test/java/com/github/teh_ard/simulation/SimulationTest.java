@@ -19,7 +19,7 @@ class SimulationTest {
 
     @Test
     void testDefaultIterationCount() {
-        sim.addPerson(1, DummyPerson.class);
+        sim.addPerson(1, 10, 2, DummyPerson.class);
         for (int i = 0; i<999; ++i) {
            sim.update();
         }
@@ -33,7 +33,7 @@ class SimulationTest {
     @Test
     void setMaxIterationCount() {
         sim.setMaxIterationCount(5);
-        sim.addPerson(1, DummyPerson.class);
+        sim.addPerson(1, 10, 2, DummyPerson.class);
         for (int i = 0; i<4; ++i) {
             sim.update();
         }
@@ -47,7 +47,7 @@ class SimulationTest {
     @Test
     void entityMovement() {
         sim = new Simulation(10);
-        sim.addPerson(1,DummyPerson.class);
+        sim.addPerson(1, 10, 2, DummyPerson.class);
         Person person = sim.getPeople().get(0);
         for (int i = 0; i<999; ++i) {
             sim.update();

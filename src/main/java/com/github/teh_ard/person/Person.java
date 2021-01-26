@@ -18,7 +18,9 @@ public abstract class Person {
     private List<Rectangle> sectors = null;
     private int bounce = 0;
     private boolean wanderingToCurrentSector = false;
-    private Random rand = new Random();
+    private final Random rand = new Random();
+    private double lethalityLevel = 10;
+    private int incubationValue;
 
     public Person() {
         velocity = new MapPoint(
@@ -34,7 +36,7 @@ public abstract class Person {
     public void setInfected(boolean infected) {
         this.infected = infected;
         if (infected) {
-            this.incubationPeriod = 2;
+            this.incubationPeriod = incubationValue;
         }
 
     }
@@ -56,7 +58,7 @@ public abstract class Person {
      * @return Stan życia osoby
      */
     public boolean shouldDie() {
-        return isDead() || isInfected() && incubationPeriod == 0 && Math.random() > getDeathThreshold();
+        return isDead() || isInfected() && incubationPeriod == 0 && Math.random() > Math.min (0.99, (getDeathThreshold() + (-0.05 * lethalityLevel) + 0.25));
     }
 
     /**
@@ -169,5 +171,13 @@ public abstract class Person {
 
     public boolean wasInfected() {
         return !infected && incubationPeriod == 0;
+    }
+
+    public void setLethalityLevel(double lethalityLevel) {
+        this.lethalityLevel = lethalityLevel;
+    }
+
+    public void setIncubationValue(int incubationValue) {
+        this.incubationValue = incubationValue;
     }
 }

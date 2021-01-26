@@ -11,7 +11,7 @@ public class Doctor extends Adult {
 
     @Override
     protected double getDeathThreshold() {
-        return 0.7;
+        return 0.9;
     }
 
     @Override

@@ -27,8 +27,10 @@ public class SimMap {
         }
     }
 
-    public void addPerson(Person person) {
+    public void addPerson(Person person, double lethalityLevel, int incubationValue) {
         people.add(person);
+        person.setLethalityLevel(lethalityLevel);
+        person.setIncubationValue(incubationValue);
         List<Rectangle> personalSectors = new ArrayList<>();
         for (int i = 0; i < 7; ++i) {
             int y = (int) (Math.random() * (rect.height / 10)) * 10;
