@@ -17,8 +17,8 @@ public class Main {
         System.out.println("Podaj rozmiar mapy (domyślnie: 100)");
         Simulation sim = new Simulation(readInt(100) * 10);
 
-        System.out.println("Podaj liczbę lekarzy (domyślnie: 100)");
-        sim.addPerson(readInt(100), Doctor.class);
+        System.out.println("Podaj liczbę lekarzy (domyślnie: 25)");
+        sim.addPerson(readInt(25), Doctor.class);
 
         System.out.println("Podaj liczbę dorosłych (domyślnie: 250)");
         sim.addPerson(readInt(250), Adult.class);

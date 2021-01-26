@@ -85,7 +85,7 @@ public class Simulation {
                 continue;
             }
 
-            person.move(map);
+            person.move();
             person.update(map);
 
             if (!person.isDead()) {

@@ -29,23 +29,24 @@ public class SimMap {
 
     public void addPerson(Person person) {
         people.add(person);
-        int y = (int) (Math.random() * (rect.height / 10)) * 10;
-        int x = (int) (Math.random() * (rect.width / 10)) * 10;
-        Rectangle homeRect = sectors.get(y).get(x);
-        Rectangle workRect = homeRect;
-
-        while (workRect == homeRect) {
-            workRect = sectors.get((int) (Math.random() * (rect.height / 10)) * 10).get((int) (Math.random() * (rect.width / 10)) * 10);
+        List<Rectangle> personalSectors = new ArrayList<>();
+        for (int i = 0; i < 7; ++i) {
+            int y = (int) (Math.random() * (rect.height / 10)) * 10;
+            int x = (int) (Math.random() * (rect.width / 10)) * 10;
+            Rectangle sector = sectors.get(y).get(x);
+            if (!personalSectors.contains(sector)) {
+                personalSectors.add(sector);
+            } else {
+                i--;
+            }
         }
 
-        person.setCurrentSector(homeRect);
         person.setPosition(new MapPoint(
-                homeRect.getX() + Math.random() * 10,
-                homeRect.getY() + Math.random() * 10
+                personalSectors.get(0).getX() + Math.random() * 10,
+                personalSectors.get(0).getY() + Math.random() * 10
         ));
 
-        person.setHome(homeRect);
-        person.setWork(workRect);
+        person.setSectors(personalSectors);
     }
 
     public void update() {
