@@ -1,7 +1,7 @@
 package com.github.teh_ard.simulation.map;
 
 import com.github.teh_ard.person.Person;
-import com.github.teh_ard.utils.MapPoint;
+import com.github.teh_ard.utils.Vector2;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -9,13 +9,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//TODO: skomentować tą klasę
 public class SimMap {
     private final Rectangle rect;
     private final List<Person> people = new ArrayList<>();
     private final Map<Integer, Map<Integer, Rectangle>> sectors = new HashMap<>();
 
+    // TODO: dodać test dzielenia na sektory
+    /**
+     * Tworzy nową mapę oraz dzieli ją na mniejsze sektory po których będą poruszać się osoby
+     * @param mapSize Rozmiar mapy
+     */
     public SimMap(int mapSize) {
+        mapSize *= 10;
         rect = new Rectangle(0, 0, mapSize, mapSize);
         for (int y = 0; y < mapSize; y += 10) {
             Map<Integer, Rectangle> row = new HashMap<>();
@@ -28,6 +33,13 @@ public class SimMap {
         }
     }
 
+//    TODO: Zrobić test sektorów osoby (czy nie przydziela takich samych oraz ile ich jest)
+    /**
+     * Dodaje osobę do mapy oraz przydziela jej sektory
+     * @param person dana osoba
+     * @param lethalityLevel poziom śmiertelności podany przez użytkownika
+     * @param incubationValue czas inkubacji podany przez użytkownika
+     */
     public void addPerson(Person person, double lethalityLevel, int incubationValue) {
         people.add(person);
         person.setLethalityLevel(lethalityLevel);
@@ -44,7 +56,7 @@ public class SimMap {
             }
         }
 
-        person.setPosition(new MapPoint(
+        person.setPosition(new Vector2(
                 personalSectors.get(0).getX() + Math.random() * 10,
                 personalSectors.get(0).getY() + Math.random() * 10
         ));
@@ -52,14 +64,10 @@ public class SimMap {
         person.setSectors(personalSectors);
     }
 
-    public boolean contains(double v, double v1) {
-        return rect.contains(v,v1);
-    }
-
-    public boolean contains(MapPoint point) {
-        return contains(point.getX(), point.getY());
-    }
-
+    /**
+     * Zwraca listę osób
+     * @return lista osób
+     */
     public List<Person> getPeople() {
         return people;
     }

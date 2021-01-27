@@ -1,7 +1,5 @@
 package com.github.teh_ard.simulation;
 
-import com.github.teh_ard.person.Person;
-import com.github.teh_ard.utils.MapPoint;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -43,18 +41,4 @@ class SimulationTest {
         sim.update();
         assertTrue(sim.isDone());
     }
-
-    @Test
-    void entityMovement() {
-        sim = new Simulation(10);
-        sim.addPerson(1, 10, 2, DummyPerson.class);
-        Person person = sim.getPeople().get(0);
-        for (int i = 0; i<999; ++i) {
-            sim.update();
-            MapPoint position = person.getPosition();
-            System.out.println(position.toString());
-            assertTrue(sim.getMap().contains(position));
-        }
-    }
-
 }

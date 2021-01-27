@@ -6,6 +6,7 @@ import com.github.teh_ard.person.Person;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -62,10 +63,10 @@ public class Simulation {
 
         for (int i = 0; i < count; ++i) {
             try {
-                Person person = clazz.newInstance();
+                Person person = (Person) clazz.getConstructors()[0].newInstance();
                 map.addPerson(person, lethalityLevel, incubationValue);
                 people.add(person);
-            } catch (InstantiationException | IllegalAccessException e) {
+            } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
                 e.printStackTrace();
             }
         }

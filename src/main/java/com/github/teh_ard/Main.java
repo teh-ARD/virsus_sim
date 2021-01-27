@@ -22,7 +22,7 @@ public class Main {
 //      TODO: ew. zapytanie "czy chcesz zmieniać domyślne wartości?" żeby nie było tyle klikania enterem
 
         System.out.println("Podaj rozmiar mapy (domyślnie: 100)");
-        Simulation sim = new Simulation(readInt(100) * 10);
+        Simulation sim = new Simulation(readInt(100));
 
         System.out.println("Podaj wskaźnik śmiertelności wirusa [1-10] (domyślnie: 5)");
         int lethalityLevel = Math.min(10, readInt(5));

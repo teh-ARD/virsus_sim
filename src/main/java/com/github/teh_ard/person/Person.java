@@ -1,7 +1,7 @@
 package com.github.teh_ard.person;
 
 import com.github.teh_ard.simulation.map.SimMap;
-import com.github.teh_ard.utils.MapPoint;
+import com.github.teh_ard.utils.Vector2;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Random;
 
 public abstract class Person {
-    private MapPoint velocity;
-    private MapPoint position;
+    private Vector2 velocity;
+    private Vector2 position;
     private boolean died = false;
     private boolean infected = false;
     int incubationPeriod = -1;
@@ -22,8 +22,11 @@ public abstract class Person {
     private double lethalityLevel = 10;
     private int incubationValue;
 
+    /**
+     * Tworzy nową osobę oraz ustanawia jej nowy wektor prędkości
+     */
     public Person() {
-        velocity = new MapPoint(
+        velocity = new Vector2(
                 (Math.random() * 2 - 1) * getMaxSpeed(),
                 (Math.random() * 2 - 1) * getMaxSpeed()
         );
@@ -33,6 +36,10 @@ public abstract class Person {
     public abstract int getMaxSpeed();
     protected abstract double getDeathThreshold();
 
+    /**
+     * Zmienia stan zarażenia osoby oraz resetuje czas inkubacji
+     * @param infected nowy stan zarażenia
+     */
     public void setInfected(boolean infected) {
         this.infected = infected;
         if (infected) {
@@ -41,6 +48,10 @@ public abstract class Person {
 
     }
 
+    /**
+     * Zwraca informację czy dana osoba jest zarażona
+     * @return stan zarażenia osoby
+     */
     public boolean isInfected() {
         return infected;
     }
@@ -58,21 +69,28 @@ public abstract class Person {
      * @return Stan życia osoby
      */
     public boolean shouldDie() {
-        return isDead() || isInfected() && incubationPeriod == 0 && Math.random() > Math.min (0.99, (getDeathThreshold() + (-0.05 * lethalityLevel) + 0.25));
+        return isDead()
+                || isInfected()
+                && incubationPeriod == 0
+                && Math.random() > Math.min(0.99, (getDeathThreshold() + (-0.05 * lethalityLevel) + 0.25));
     }
 
-//  TODO: skomentować ruch osoby
     /**
      * Odpowiada za ruch osoby
      *
-     *
+     * Krok 1: Sprawdza czy osoba podróżuje do innego sektora
+     * Krok 2.1: Jeśli nie, dokonuje ruchu z ustaloną prędkością (wektorem)
+     * Krok 2.2: Jeśli tak, ustawia nową prędkość poruszania się do sektora docelowego:
+     * Krok 3: Jeśli osoba "wyszłaby" spoza sektora ponad 3 razy, losowany jest nowy sektor docelowy z przypisanych
+     * danej osobie sektorów
+     * Krok 4: Tworzony jest wektor w kierunku sektora docelowego
      */
     public void move() {
         if (sectors == null) {
             return;
         }
 
-        MapPoint oldVelocity = velocity;
+        Vector2 oldVelocity = velocity;
         if (wanderingToCurrentSector && !sectors.get(currentSector).contains(position.getX(), position.getY())) {
             position.add(velocity);
             return;
@@ -83,7 +101,7 @@ public abstract class Person {
         }
 
         while (!sectors.get(currentSector).contains(position.getX() + velocity.getX(), position.getY() + velocity.getY())) {
-            velocity = new MapPoint(
+            velocity = new Vector2(
                     (Math.random() * 2 - 1) * getMaxSpeed(),
                     (Math.random() * 2 - 1) * getMaxSpeed()
             );
@@ -96,7 +114,7 @@ public abstract class Person {
                 currentSector = rollSector();
             }
 
-            velocity = new MapPoint(
+            velocity = new Vector2(
                     sectors.get(currentSector).getX() + position.getX() + Math.random() * 10,
                     sectors.get(currentSector).getY() + position.getY() + Math.random() * 10
             );
@@ -177,7 +195,7 @@ public abstract class Person {
      * Ustawia pozycje osoby
      * @param position pozycja osoby
      */
-    public void setPosition(MapPoint position) {
+    public void setPosition(Vector2 position) {
         this.position = position;
     }
 
@@ -185,7 +203,7 @@ public abstract class Person {
      * Zwraca pozycje osoby
      * @return pozycja osoby
      */
-    public MapPoint getPosition() {
+    public Vector2 getPosition() {
         return position;
     }
 
