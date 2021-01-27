@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="225px" preserveAspectRatio="none" style="width:216px;height:225px;" version="1.1" viewBox="0 0 216 225" width="216px" zoomAndPan="magnify"><defs><filter height="300%" id="f1r0nindipov59" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[6db903994374aaa6521005dfc81151ea]
+class com.github.teh_ard.person.Doctor--><a href="Doctor.html" target="_top" title="Doctor.html" xlink:actuate="onRequest" xlink:href="Doctor.html" xlink:show="new" xlink:title="Doctor.html" xlink:type="simple"><rect codeLine="5" fill="#FEFECE" filter="url(#f1r0nindipov59)" height="84.3516" id="com.github.teh_ard.person.Doctor" style="stroke: #A80036; stroke-width: 1.5;" width="188" x="9" y="105"/><ellipse cx="35.7" cy="123.9688" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M39.2156,128 L39.2156,130.0313 Q37.7313,130.6406 35.9031,130.6406 Q33.1844,130.6406 31.7313,128.9063 Q30.2781,127.1563 30.2781,124.0469 Q30.2781,121.0469 31.8563,119.2656 Q33.4344,117.4688 36.1531,117.4688 Q38.0594,117.4688 39.7938,118.3906 L38.8406,120.2969 Q37.3406,119.5156 36.1531,119.5156 Q34.5438,119.5156 33.5594,120.7344 Q32.5906,121.9375 32.5906,124.0625 Q32.5906,126.3125 33.4969,127.4531 Q34.4188,128.5938 36.1531,128.5938 Q37.1844,128.5938 39.2156,128 Z "/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="47" x="93.8" y="122.9951">Doctor</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="130" x="52.3" y="135.5791">com.github.teh_ard.person</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="10" x2="196" y1="142.9375" y2="142.9375"/><ellipse cx="20" cy="153.9375" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="152" x="29" y="157.1479">canInfect(Person): boolean</text><polygon fill="#FFFF44" points="20,161.7422,24,165.7422,20,169.7422,16,165.7422" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="162" x="29" y="169.9526">getDeathThreshold(): double</text><ellipse cx="20" cy="179.5469" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="123" x="29" y="182.7573">update(SimMap): void</text></a><!--MD5=[193d6b090e217a5f5bd6df6956e39dd5]
+class com.github.teh_ard.person.Adult--><a href="Adult.html" target="_top" title="Adult.html" xlink:actuate="onRequest" xlink:href="Adult.html" xlink:show="new" xlink:title="Adult.html" xlink:type="simple"><rect codeLine="11" fill="#FEFECE" filter="url(#f1r0nindipov59)" height="37.9375" id="com.github.teh_ard.person.Adult" style="stroke: #A80036; stroke-width: 1.5;" width="162" x="22" y="7"/><ellipse cx="37" cy="25.9688" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M40.5156,30 L40.5156,32.0313 Q39.0313,32.6406 37.2031,32.6406 Q34.4844,32.6406 33.0313,30.9063 Q31.5781,29.1563 31.5781,26.0469 Q31.5781,23.0469 33.1563,21.2656 Q34.7344,19.4688 37.4531,19.4688 Q39.3594,19.4688 41.0938,20.3906 L40.1406,22.2969 Q38.6406,21.5156 37.4531,21.5156 Q35.8438,21.5156 34.8594,22.7344 Q33.8906,23.9375 33.8906,26.0625 Q33.8906,28.3125 34.7969,29.4531 Q35.7188,30.5938 37.4531,30.5938 Q38.4844,30.5938 40.5156,30 Z "/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="98.5" y="24.9951">Adult</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="130" x="51" y="37.5791">com.github.teh_ard.person</text></a><!--MD5=[00d342350b9a2be4b13f0bdee0f4be91]
+reverse link com.github.teh_ard.person.Adult to com.github.teh_ard.person.Doctor--><path codeLine="13" d="M103,65.54 C103,78.08 103,92.05 103,104.78 " fill="none" id="com.github.teh_ard.person.Adult-backto-com.github.teh_ard.person.Doctor" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="96,65.07,103,45.07,110,65.07,96,65.07" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="192" x="3" y="211.6338">UMLDoclet 2.0.12, PlantUML 1.2020.16</text><!--MD5=[44f2093e6951f4c446d35a1b719bdcbe]
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>Doctor\n<size:10>com.github.teh_ard.person" as com.github.teh_ard.person.Doctor [[Doctor.html]] {
+        +canInfect(Person): boolean
+        #getDeathThreshold(): double
+        +update(SimMap): void
+    }
+
+    class "<size:14>Adult\n<size:10>com.github.teh_ard.person" as com.github.teh_ard.person.Adult [[Adult.html]]
+
+    com.github.teh_ard.person.Adult <|- - com.github.teh_ard.person.Doctor
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml
+
+PlantUML version 1.2020.16(Sun Aug 23 22:20:43 CEST 2020)
+(APACHE source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: pl
+Country: PL
+--></g></svg>

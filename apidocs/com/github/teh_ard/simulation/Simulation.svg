@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="185px" preserveAspectRatio="none" style="width:391px;height:185px;" version="1.1" viewBox="0 0 391 185" width="391px" zoomAndPan="magnify"><defs><filter height="300%" id="f1docstdj01e3l" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[b2e2455b1ec5b7abcc16854a0ac4ad61]
+class com.github.teh_ard.simulation.Simulation--><a href="Simulation.html" target="_top" title="Simulation.html" xlink:actuate="onRequest" xlink:href="Simulation.html" xlink:show="new" xlink:title="Simulation.html" xlink:type="simple"><rect codeLine="5" fill="#FEFECE" filter="url(#f1docstdj01e3l)" height="148.375" id="com.github.teh_ard.simulation.Simulation" style="stroke: #A80036; stroke-width: 1.5;" width="365" x="7" y="7"/><ellipse cx="112.25" cy="25.9688" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M115.7656,30 L115.7656,32.0313 Q114.2813,32.6406 112.4531,32.6406 Q109.7344,32.6406 108.2813,30.9063 Q106.8281,29.1563 106.8281,26.0469 Q106.8281,23.0469 108.4063,21.2656 Q109.9844,19.4688 112.7031,19.4688 Q114.6094,19.4688 116.3438,20.3906 L115.3906,22.2969 Q113.8906,21.5156 112.7031,21.5156 Q111.0938,21.5156 110.1094,22.7344 Q109.1406,23.9375 109.1406,26.0625 Q109.1406,28.3125 110.0469,29.4531 Q110.9688,30.5938 112.7031,30.5938 Q113.7344,30.5938 115.7656,30 Z "/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="71" x="170.25" y="24.9951">Simulation</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="146" x="132.75" y="37.5791">com.github.teh_ard.simulation</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="371" y1="44.9375" y2="44.9375"/><ellipse cx="18" cy="55.9375" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="82" x="27" y="59.1479">Simulation(int)</text><ellipse cx="18" cy="68.7422" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="66" x="27" y="71.9526">start(): void</text><ellipse cx="18" cy="81.5469" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="339" x="27" y="84.7573">addPerson(int, double, int, Class&lt;? extends Person&gt;): void</text><ellipse cx="18" cy="94.3516" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="173" x="27" y="97.562">setMaxIterationCount(int): void</text><ellipse cx="18" cy="107.1563" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="78" x="27" y="110.3667">update(): void</text><ellipse cx="18" cy="119.9609" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="100" x="27" y="123.1714">isDone(): boolean</text><ellipse cx="18" cy="132.7656" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="150" x="27" y="135.9761">getPeople(): List&lt;Person&gt;</text><ellipse cx="18" cy="145.5703" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="102" x="27" y="148.7808">getMap(): SimMap</text></a><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="192" x="93.5" y="171.6572">UMLDoclet 2.0.12, PlantUML 1.2020.16</text><!--MD5=[22a4103821a4b4ae5c67162547c62a8e]
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>Simulation\n<size:10>com.github.teh_ard.simulation" as com.github.teh_ard.simulation.Simulation [[Simulation.html]] {
+        +Simulation(int)
+        +start(): void
+        +addPerson(int, double, int, Class<? extends Person>): void
+        +setMaxIterationCount(int): void
+        +update(): void
+        +isDone(): boolean
+        +getPeople(): List<Person>
+        +getMap(): SimMap
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml
+
+PlantUML version 1.2020.16(Sun Aug 23 22:20:43 CEST 2020)
+(APACHE source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: pl
+Country: PL
+--></g></svg>

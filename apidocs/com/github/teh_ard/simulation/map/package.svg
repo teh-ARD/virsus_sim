@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="197px" preserveAspectRatio="none" style="width:329px;height:197px;" version="1.1" viewBox="0 0 329 197" width="329px" zoomAndPan="magnify"><defs><filter height="300%" id="f1007jth86y72p" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[a2ce21a01e8db48d54a5ad2d57cacf50]
+cluster com.github.teh_ard.simulation.map--><polygon fill="#FFFFFF" filter="url(#f1007jth86y72p)" points="16,6,297,6,304,28.2969,307,28.2969,307,169,16,169,16,6" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="16" x2="304" y1="28.2969" y2="28.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="275" x="20" y="20.9951">com.github.teh_ard.simulation.map</text><!--MD5=[59fd4a8b3123d427eb4d050d07389704]
+class com.github.teh_ard.simulation.map.SimMap--><a href="SimMap.html" target="_top" title="SimMap.html" xlink:actuate="onRequest" xlink:href="SimMap.html" xlink:show="new" xlink:title="SimMap.html" xlink:type="simple"><rect codeLine="3" fill="#FEFECE" filter="url(#f1007jth86y72p)" height="112.0234" id="com.github.teh_ard.simulation.map.SimMap" style="stroke: #A80036; stroke-width: 1.5;" width="234" x="44" y="41"/><ellipse cx="132.75" cy="57" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M136.2656,61.0313 L136.2656,63.0625 Q134.7813,63.6719 132.9531,63.6719 Q130.2344,63.6719 128.7813,61.9375 Q127.3281,60.1875 127.3281,57.0781 Q127.3281,54.0781 128.9063,52.2969 Q130.4844,50.5 133.2031,50.5 Q135.1094,50.5 136.8438,51.4219 L135.8906,53.3281 Q134.3906,52.5469 133.2031,52.5469 Q131.5938,52.5469 130.6094,53.7656 Q129.6406,54.9688 129.6406,57.0938 Q129.6406,59.3438 130.5469,60.4844 Q131.4688,61.625 133.2031,61.625 Q134.2344,61.625 136.2656,61.0313 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="153.25" y="61.1543">SimMap</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="45" x2="277" y1="73" y2="73"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="45" x2="277" y1="81" y2="81"/><ellipse cx="55" cy="92" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="64" y="95.2104">SimMap(int)</text><ellipse cx="55" cy="104.8047" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="208" x="64" y="108.0151">addPerson(Person, double, int): void</text><ellipse cx="55" cy="117.6094" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="193" x="64" y="120.8198">contains(double, double): boolean</text><ellipse cx="55" cy="130.4141" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="160" x="64" y="133.6245">contains(MapPoint): boolean</text><ellipse cx="55" cy="143.2188" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="150" x="64" y="146.4292">getPeople(): List&lt;Person&gt;</text></a><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="192" x="59.5" y="184.2822">UMLDoclet 2.0.12, PlantUML 1.2020.16</text><!--MD5=[28f9b9b2501735a9096ed048e563cf87]
+@startuml
+    namespace com.github.teh_ard.simulation.map {
+
+        class SimMap [[SimMap.html]] {
+            +SimMap(int)
+            +addPerson(Person, double, int): void
+            +contains(double, double): boolean
+            +contains(MapPoint): boolean
+            +getPeople(): List<Person>
+        }
+
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml
+
+PlantUML version 1.2020.16(Sun Aug 23 22:20:43 CEST 2020)
+(APACHE source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: pl
+Country: PL
+--></g></svg>
