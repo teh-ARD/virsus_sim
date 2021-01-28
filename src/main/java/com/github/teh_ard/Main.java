@@ -31,22 +31,27 @@ public class Main {
         int incubationValue = readInt(2);
 
         System.out.println("Podaj liczbę lekarzy (domyślnie: 25)");
-        sim.addPerson(readInt(25), lethalityLevel, incubationValue, Doctor.class);
+        int doctors = readInt(25);
+        sim.addPerson(doctors, lethalityLevel, incubationValue, Doctor.class);
 
         System.out.println("Podaj liczbę dorosłych (domyślnie: 250)");
-        sim.addPerson(readInt(250), lethalityLevel, incubationValue, Adult.class);
+        int adults = readInt(250);
+        sim.addPerson(adults, lethalityLevel, incubationValue, Adult.class);
 
         System.out.println("Podaj liczbę dzieci (domyślnie: 150)");
-        sim.addPerson(readInt(150), lethalityLevel, incubationValue, Child.class);
+        int children = readInt(150);
+        sim.addPerson(children, lethalityLevel, incubationValue, Child.class);
 
         System.out.println("Podaj liczbę starców (domyślnie: 50)");
-        sim.addPerson(readInt(50), lethalityLevel, incubationValue, Elder.class);
+        int elderly = readInt(50);
+        sim.addPerson(elderly, lethalityLevel, incubationValue, Elder.class);
 
-        System.out.println("Podaj liczbę zarażonych (domyślnie: 50)");
-        int infected = readInt(50);
+        int everyone = doctors + adults + children + elderly;
+        System.out.printf("Podaj liczbę zarażonych (domyślnie: 50, max: %d)%n", everyone);
+        int infected = Math.min(readInt(50), everyone);
 
         System.out.println("Podaj maksymalną liczbę iteracji (domyślnie: 1000, min: 1)");
-        sim.setMaxIterationCount(Math.min(readInt(1000), 1));
+        sim.setMaxIterationCount(readInt(1000));
 
         if (sim.getPeople().size() == 0) {
             System.out.println("Brak osób w symulacji!!!");
