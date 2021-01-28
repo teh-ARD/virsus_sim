@@ -171,12 +171,4 @@ public class Simulation {
     public List<Person> getPeople() {
         return people;
     }
-
-    /**
-     * Zwraca mapę symulacji
-     * @return Mapa symulacji
-     */
-    public SimMap getMap() {
-        return map;
-    }
 }

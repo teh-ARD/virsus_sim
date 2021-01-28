@@ -238,4 +238,8 @@ public abstract class Person {
     public void setIncubationValue(int incubationValue) {
         this.incubationValue = incubationValue;
     }
+
+    public List<Rectangle> getSectors() {
+        return sectors;
+    }
 }

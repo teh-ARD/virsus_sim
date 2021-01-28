@@ -21,8 +21,8 @@ public class Main {
 
 //      TODO: ew. zapytanie "czy chcesz zmieniać domyślne wartości?" żeby nie było tyle klikania enterem
 
-        System.out.println("Podaj rozmiar mapy (domyślnie: 100)");
-        Simulation sim = new Simulation(readInt(100));
+        System.out.println("Podaj rozmiar mapy (domyślnie: 100, min: 10)");
+        Simulation sim = new Simulation(Math.max(readInt(100),10));
 
         System.out.println("Podaj wskaźnik śmiertelności wirusa [1-10] (domyślnie: 5)");
         int lethalityLevel = Math.min(10, readInt(5));
@@ -45,8 +45,12 @@ public class Main {
         System.out.println("Podaj liczbę zarażonych (domyślnie: 50)");
         int infected = readInt(50);
 
-        System.out.println("Podaj maksymalną liczbę iteracji (domyślnie: 1000)");
-        sim.setMaxIterationCount(readInt(1000));
+        System.out.println("Podaj maksymalną liczbę iteracji (domyślnie: 1000, min: 1)");
+        sim.setMaxIterationCount(Math.min(readInt(1000), 1));
+
+        if (sim.getPeople().size() == 0) {
+            System.out.println("Brak osób w symulacji!!!");
+        }
 
         while (infected-- > 0) {
             Person person = sim.getPeople().get((int) (Math.random() * sim.getPeople().size()));

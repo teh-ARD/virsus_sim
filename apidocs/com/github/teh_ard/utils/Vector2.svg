@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="159px" preserveAspectRatio="none" style="width:259px;height:159px;" version="1.1" viewBox="0 0 259 159" width="259px" zoomAndPan="magnify"><defs><filter height="300%" id="f1tdr33mhwud4s" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[735f34e2df07e21c6eb1b869045a86e6]
+class com.github.teh_ard.utils.Vector2--><a href="Vector2.html" target="_top" title="Vector2.html" xlink:actuate="onRequest" xlink:href="Vector2.html" xlink:show="new" xlink:title="Vector2.html" xlink:type="simple"><rect codeLine="5" fill="#FEFECE" filter="url(#f1tdr33mhwud4s)" height="122.7656" id="com.github.teh_ard.utils.Vector2" style="stroke: #A80036; stroke-width: 1.5;" width="233" x="7" y="7"/><ellipse cx="61.25" cy="25.9688" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M64.7656,30 L64.7656,32.0313 Q63.2813,32.6406 61.4531,32.6406 Q58.7344,32.6406 57.2813,30.9063 Q55.8281,29.1563 55.8281,26.0469 Q55.8281,23.0469 57.4063,21.2656 Q58.9844,19.4688 61.7031,19.4688 Q63.6094,19.4688 65.3438,20.3906 L64.3906,22.2969 Q62.8906,21.5156 61.7031,21.5156 Q60.0938,21.5156 59.1094,22.7344 Q58.1406,23.9375 58.1406,26.0625 Q58.1406,28.3125 59.0469,29.4531 Q59.9688,30.5938 61.7031,30.5938 Q62.7344,30.5938 64.7656,30 Z "/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="54" x="112.75" y="24.9951">Vector2</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="116" x="81.75" y="37.5791">com.github.teh_ard.utils</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="8" x2="239" y1="44.9375" y2="44.9375"/><ellipse cx="18" cy="55.9375" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="135" x="27" y="59.1479">Vector2(double, double)</text><ellipse cx="18" cy="68.7422" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="79" x="27" y="71.9526">getX(): double</text><ellipse cx="18" cy="81.5469" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="79" x="27" y="84.7573">getY(): double</text><ellipse cx="18" cy="94.3516" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="103" x="27" y="97.562">add(Vector2): void</text><ellipse cx="18" cy="107.1563" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="207" x="27" y="110.3667">distanceToSquared(Vector2): double</text><ellipse cx="18" cy="119.9609" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="107" x="27" y="123.1714">scale(double): void</text></a><text fill="#888888" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="192" x="27.5" y="146.0479">UMLDoclet 2.0.12, PlantUML 1.2020.16</text><!--MD5=[cc185076befc1db1fbc41ef66a88b728]
+@startuml
+    set namespaceSeparator none
+    hide empty fields
+    hide empty methods
+
+    class "<size:14>Vector2\n<size:10>com.github.teh_ard.utils" as com.github.teh_ard.utils.Vector2 [[Vector2.html]] {
+        +Vector2(double, double)
+        +getX(): double
+        +getY(): double
+        +add(Vector2): void
+        +distanceToSquared(Vector2): double
+        +scale(double): void
+    }
+
+    center footer UMLDoclet 2.0.12, PlantUML 1.2020.16
+@enduml
+
+PlantUML version 1.2020.16(Sun Aug 23 22:20:43 CEST 2020)
+(APACHE source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: pl
+Country: PL
+--></g></svg>

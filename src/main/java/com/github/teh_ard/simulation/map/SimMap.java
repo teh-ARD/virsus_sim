@@ -14,7 +14,6 @@ public class SimMap {
     private final List<Person> people = new ArrayList<>();
     private final Map<Integer, Map<Integer, Rectangle>> sectors = new HashMap<>();
 
-    // TODO: dodać test dzielenia na sektory
     /**
      * Tworzy nową mapę oraz dzieli ją na mniejsze sektory po których będą poruszać się osoby
      * @param mapSize Rozmiar mapy
@@ -33,7 +32,6 @@ public class SimMap {
         }
     }
 
-//    TODO: Zrobić test sektorów osoby (czy nie przydziela takich samych oraz ile ich jest)
     /**
      * Dodaje osobę do mapy oraz przydziela jej sektory
      * @param person dana osoba
@@ -70,5 +68,9 @@ public class SimMap {
      */
     public List<Person> getPeople() {
         return people;
+    }
+
+    public Map<Integer, Map<Integer, Rectangle>> getSectors() {
+        return sectors;
     }
 }
